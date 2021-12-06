@@ -52,9 +52,15 @@ class Bingo:
         self._numbers = numbers
 
     def play(self):
+        marked_for_removal = []
         for num in self._numbers:
-            for board in self._boards:
+            marked_for_removal.clear()
+            for i, board in enumerate(self._boards):
                 board.mark_number(num)
                 if board.is_win():
-                    return board.get_score(num)
+                    marked_for_removal.append(i)
 
+            for r in sorted(marked_for_removal, reverse=True):
+                b = self._boards.pop(r)
+                if len(self._boards) == 0:
+                    return b.get_score(num)
