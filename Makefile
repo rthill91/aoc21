@@ -1,4 +1,4 @@
-script=d01
+script=d02
 
 run:
 	poetry run $(script)
