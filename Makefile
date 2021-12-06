@@ -1,7 +1,5 @@
-script=d02
-
 run:
-	poetry run $(script)
+	poetry run aoc
 
 test:
 	poetry run pytest

@@ -1,3 +1,3 @@
 __version__ = '0.1.0'
 import os
-from . import day01, day02
+from . import aoc

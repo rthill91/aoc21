@@ -1,4 +1,21 @@
-from .common import get_movement_input, Movement, Direction
+from dataclasses import dataclass
+from enum import Enum
+
+
+class Direction(Enum):
+    FORWARD = "forward"
+    UP = "up"
+    DOWN = "down"
+
+
+@dataclass
+class Movement:
+    direction: Direction
+    distance: int
+
+    def __post_init__(self):
+        if not isinstance(self.direction, Direction):
+            self.direction = Direction(self.direction)
 
 
 class Ship():
@@ -20,21 +37,3 @@ class Ship():
                 self._y -= movement.distance
             case Direction.DOWN:
                 self._y += movement.distance
-
-
-def run():
-    inputs = get_movement_input(2)
-    part1(inputs)
-
-
-def part1(movement: Movement):
-    ship = Ship()
-    for move in movement:
-        ship.move(move)
-    hash = ship.get_hash()
-    print(hash)
-    return hash
-
-
-def part2():
-    return NotImplemented

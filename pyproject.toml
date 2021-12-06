@@ -5,8 +5,7 @@ description = ""
 authors = ["Ryan Hill <rthill91@gmail.com>"]
 
 [tool.poetry.scripts]
-d01 = "aoc21.day01:run"
-d02 = "aoc21.day02:run"
+aoc = "aoc21.aoc:run"
 
 [tool.poetry.dependencies]
 python = "^3.10"
