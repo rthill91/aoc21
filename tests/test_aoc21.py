@@ -3,6 +3,6 @@ from aoc21.ship import Movement
 
 
 def test_aoc():
-    test_input = [Movement("forward", 5), Movement("down", 5), Movement("forward", 8), Movement("up", 3), Movement("down", 8), Movement("forward", 2)]
+    test_input = [ "00100", "11110", "10110", "10111", "10101", "01111", "00111", "11100", "10000", "11001", "00010", "01010"]
     res = aoc.run(test_input)
-    assert res == 900
+    assert res == 198
