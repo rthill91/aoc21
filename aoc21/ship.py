@@ -22,6 +22,7 @@ class Ship():
     def __init__(self):
         self._x = 0
         self._y = 0
+        self._aim = 0
 
     def get_coords(self) -> tuple[int, int]:
         return (self._x, self._y)
@@ -33,7 +34,8 @@ class Ship():
         match movement.direction:
             case Direction.FORWARD:
                 self._x += movement.distance
+                self._y += movement.distance * self._aim
             case Direction.UP:
-                self._y -= movement.distance
+                self._aim -= movement.distance
             case Direction.DOWN:
-                self._y += movement.distance
+                self._aim += movement.distance
